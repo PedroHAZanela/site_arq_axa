@@ -1,112 +1,162 @@
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
-  margin: 0;
   font-family: 'Inter', sans-serif;
-  background: #0f0f0f;
+  background: #000;
   color: #eaeaea;
   line-height: 1.6;
 }
 
-header {
+/* ===== BLOCO 1 - HERO (PRETO) ===== */
+.block-hero {
   height: 100vh;
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)),
-              url('https://images.unsplash.com/photo-1503387762-592deb58ef4e') center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
+    url('https://images.unsplash.com/photo-1503387762-592deb58ef4e') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  animation: fadeIn 2s ease;
 }
 
-.hero h1 {
+.hero-content h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 3.5rem;
-  margin-bottom: 1rem;
-  letter-spacing: 2px;
+  font-size: 3.8rem;
+  letter-spacing: 3px;
 }
 
-.hero p {
+.hero-content p {
+  margin: 20px 0 40px;
   font-size: 1.2rem;
-  margin-bottom: 2rem;
-  color: #ccc;
-}
-
-.btn {
-  display: inline-block;
-  padding: 14px 36px;
-  background: linear-gradient(135deg, #cfa14a, #f5d07a);
-  color: #000;
-  text-decoration: none;
-  border-radius: 50px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  transition: all 0.3s ease;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-}
-
-.btn:hover {
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.6);
-}
-
-section {
-  padding: 100px 10%;
-  animation: slideUp 1.5s ease;
-}
-
-h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-  text-align: center;
-}
-
-.about p,
-.cta p {
-  max-width: 800px;
-  margin: 0 auto 30px;
-  text-align: center;
   color: #bbb;
 }
 
-.portfolio {
+/* ===== BOTÃO PREMIUM ===== */
+.btn {
+  padding: 14px 38px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #cfa14a, #f5d07a);
+  color: #000;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .5);
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, .8);
+}
+
+/* ===== BLOCO 2 - SOBRE (AZUL ESCURO) ===== */
+.block-about {
+  background: #0b1c2d;
+  padding: 120px 10%;
+  text-align: center;
+}
+
+.block-about h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.6rem;
+  margin-bottom: 30px;
+}
+
+.block-about p {
+  max-width: 800px;
+  margin: auto;
+  color: #cfd8e3;
+}
+
+/* ===== BLOCO 3 - PORTFÓLIO (AZUL CLARO) ===== */
+.block-portfolio {
+  background: #e6f0fa;
+  padding: 120px 8%;
+  color: #111;
+}
+
+.block-portfolio h2 {
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  margin-bottom: 60px;
+  color: #0b1c2d;
+}
+
+.portfolio-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
+  gap: 40px;
 }
 
-.portfolio img {
+.portfolio-grid img {
   width: 100%;
-  border-radius: 15px;
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  border-radius: 18px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, .25);
+  transition: 0.5s ease;
 }
 
-.portfolio img:hover {
+.portfolio-grid img:hover {
   transform: scale(1.05);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.8);
 }
 
-.cta {
-  background: linear-gradient(135deg, #111, #000);
+/* ===== BLOCO 4 - CTA (AZUL ESCURO) ===== */
+.block-cta {
+  background: linear-gradient(135deg, #081726, #0b1c2d);
+  padding: 120px 10%;
   text-align: center;
 }
 
-footer {
-  background-color: #000;
-  color: #777;
+.block-cta h2 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 20px;
+}
+
+.block-cta p {
+  color: #cfd8e3;
+  margin-bottom: 40px;
+}
+
+/* ===== BLOCO 5 - RODAPÉ (PRETO) ===== */
+.block-footer {
+  background: #000;
   text-align: center;
-  padding: 30px;
+  padding: 40px;
   font-size: 0.9rem;
+  color: #777;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+/* ===== ANIMAÇÕES PREMIUM ===== */
+.block-hero,
+.block-about,
+.block-portfolio,
+.block-cta {
+  animation: fadeUp 1.2s ease both;
 }
 
-@keyframes slideUp {
-  from { transform: translateY(60px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .block-about,
+  .block-portfolio,
+  .block-cta {
+    padding: 80px 6%;
+  }
 }
